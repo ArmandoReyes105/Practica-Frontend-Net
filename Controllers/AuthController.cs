@@ -40,8 +40,9 @@ namespace frontendnet
                     else
                         return RedirectToAction("Index", "Home");
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
+                    Console.WriteLine(ex);
                     ModelState.AddModelError("Email", "Credenciales no válidas. Inténtelo nuevamente.");
                 }
             }
