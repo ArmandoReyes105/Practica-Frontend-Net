@@ -36,7 +36,7 @@ namespace frontendnet
         public async Task<IActionResult> Detalle(int id)
         {
             Producto? item = null;
-            ViewBag.Url = configuration["UrlWebAPI"]; 
+            ViewBag.Url = configuration["URLWebAPI"]; 
             try
             {
                 item = await productos.GetAsync(id);
@@ -59,9 +59,12 @@ namespace frontendnet
         [HttpPost]
         public async Task<IActionResult> CrearAsync(Producto itemToCreate)
         {
+            Console.WriteLine("Este es controller que llama a crear"); 
             ViewBag.Url = configuration["UrlWebAPI"];
+
             if (ModelState.IsValid)
             {
+                Console.WriteLine("Si entra en el if"); 
                 try
                 {
                     await productos.PostAsync(itemToCreate);
@@ -101,6 +104,7 @@ namespace frontendnet
         [HttpPost]
         public async Task<IActionResult> EditarAsync(int id, Producto itemToEdit)
         {
+            Console.WriteLine("Holaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
             if (id != itemToEdit.ProductoId) return NotFound(); 
 
             ViewBag.Url = configuration["UrlWebAPI"]; 

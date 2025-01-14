@@ -15,9 +15,9 @@
 				<span class="badge rounded-pill text-bg-warning">@cat.Nombre</span>
 			}
 		</p>
-		<p class="mt-auto card-text text-success fw-semibold small"><i class="bi bi-lightning-fill"></i>Env�o gratis</p>
+		<p class="mt-auto card-text text-success fw-semibold small"><i class="bi bi-lightning-fill"></i>Envío gratis</p>
 	</div>
 	<div class="card-footer">
-		<a class="btn btn-primary btn-sm" href="#" role="button">Comprar</a>
+		<a class="btn btn-primary btn-sm" asp-action="AddToCart" asp-route-id="@Model.ProductoId" role="button">Agregar al carrito</a>
 	</div>
 </div>

@@ -16,6 +16,7 @@ namespace frontendnet.Services
 
         public async Task PostAsync(Producto producto)
         {
+            Console.WriteLine("Este es el cliente el servicio"); 
             var response = await client.PostAsJsonAsync($"api/productos", producto);
             response.EnsureSuccessStatusCode(); 
         }
